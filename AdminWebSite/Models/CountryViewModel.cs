@@ -24,4 +24,14 @@ namespace AdminWebSite.Models
         [Display(Name = "Пріорітет")]
         public int Priority { get; set; }
     }
+
+    public class CountryEditViewModel
+    {
+        [Display(Name = "Код країни")]
+        public int Id { get; set; }
+        [Display(Name = "Назва")]
+        public string Name { get; set; }
+        [Display(Name = "Пріорітет")]
+        public int Priority { get; set; }
+    }
 }

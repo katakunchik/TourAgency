@@ -158,9 +158,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710021645335_Create Table Countries.cs" />
-    <Compile Include="Migrations\201710021645335_Create Table Countries.Designer.cs">
-      <DependentUpon>201710021645335_Create Table Countries.cs</DependentUpon>
+    <Compile Include="Migrations\201710030900118_Create Table Country.cs" />
+    <Compile Include="Migrations\201710030900118_Create Table Country.Designer.cs">
+      <DependentUpon>201710030900118_Create Table Country.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201710031720061_Add table Cities.cs" />
     <Compile Include="Migrations\201710031720061_Add table Cities.Designer.cs">
@@ -230,6 +230,9 @@
     <Content Include="Views\Country\Create.cshtml" />
     <Content Include="Views\City\Index.cshtml" />
     <Content Include="Views\City\Create.cshtml" />
+    <Content Include="Views\Country\Edit.cshtml" />
+    <Content Include="Views\Country\Delete.cshtml" />
+    <Content Include="Views\Country\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -249,8 +252,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710021645335_Create Table Countries.resx">
-      <DependentUpon>201710021645335_Create Table Countries.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710030900118_Create Table Country.resx">
+      <DependentUpon>201710030900118_Create Table Country.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710031720061_Add table Cities.resx">
       <DependentUpon>201710031720061_Add table Cities.cs</DependentUpon>

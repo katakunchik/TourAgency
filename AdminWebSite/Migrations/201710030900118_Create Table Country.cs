@@ -3,7 +3,7 @@ namespace AdminWebSite.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CreateTableCountries : DbMigration
+    public partial class CreateTableCountry : DbMigration
     {
         public override void Up()
         {

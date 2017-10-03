@@ -50,5 +50,64 @@ namespace AdminWebSite.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Edit(int id = 0)
+        {
+            Country country = _context.Countries.FirstOrDefault(c => c.Id == id);
+            CountryEditViewModel model = new CountryEditViewModel()
+            {
+                Id = country.Id,
+                Name = country.Name,
+                Priority = country.Priority,
+            };
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Edit(CountryEditViewModel model)
+        {
+            Country country = _context.Countries.FirstOrDefault(c => c.Id == model.Id);
+            country.Name = model.Name;
+            country.Priority = model.Priority;
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            Country country = _context.Countries.FirstOrDefault(c => c.Id == id);
+            CountryViewModel model = new CountryViewModel()
+            {
+                Id = country.Id,
+                Name = country.Name,
+                Priority = country.Priority,
+                DateCreate = country.DateCreate
+            };
+            return View(model);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Country country = _context.Countries.FirstOrDefault(c => c.Id == id);
+            _context.Countries.Remove(country);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Details(int id = 0)
+        {
+            Country country = _context.Countries.FirstOrDefault(c => c.Id == id);
+            CountryViewModel model = new CountryViewModel()
+            {
+                Id = country.Id,
+                Name = country.Name,
+                Priority = country.Priority,
+                DateCreate = country.DateCreate
+            };
+            return View(model);
+        }
+
+
     }
 }
