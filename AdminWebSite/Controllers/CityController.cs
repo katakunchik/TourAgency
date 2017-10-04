@@ -57,5 +57,34 @@ namespace AdminWebSite.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Edit(int id)
+        {
+            City city = _context.Cities.FirstOrDefault(c => c.Id == id);
+            CityEditViewModel model = new CityEditViewModel()
+            {
+                Id = city.Id,
+                Name = city.Name,
+                Priority = city.Priority,
+                CountryId = city.CountryId,
+                Countries = _context.Countries
+                .Select(c => new SelectItemViewModel
+                {
+                    Id = c.Id,
+                    Name = c.Name
+                }).ToList()
+            };
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Edit(CityEditViewModel model)
+        {
+            City city = _context.Cities.FirstOrDefault(c => c.Id == model.Id);
+            city.Name = model.Name;
+            city.Priority = model.Priority;
+            city.CountryId = model.CountryId;
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

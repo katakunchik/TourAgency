@@ -29,4 +29,17 @@ namespace AdminWebSite.Models
         public int  CountryId { get; set; }
         public List<SelectItemViewModel> Countries { get; set; }
     }
+
+    public class CityEditViewModel
+    {
+        [Display(Name = "Код міста")]
+        public int Id { get; set; }
+        [Display(Name = "Назва")]
+        public string Name { get; set; }
+        [Display(Name = "Пріорітет")]
+        public int Priority { get; set; }
+        [Display(Name = "Країна")]
+        public int CountryId { get; set; }
+        public List<SelectItemViewModel> Countries { get; set; }
+    }
 }
